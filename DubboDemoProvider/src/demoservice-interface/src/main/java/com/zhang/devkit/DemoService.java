@@ -4,9 +4,9 @@ import java.util.List;
 
 public interface DemoService {
 
-    List<DemoItem> getItems(String userID);
+    List<DemoItem> getItems(String key);
 
-    boolean addItem(String userID, String itemID, int itemNum);
+    boolean addItem(String key, String itemID, int itemNum,String itemName);
 
 
 }

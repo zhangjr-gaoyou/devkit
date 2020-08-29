@@ -22,11 +22,35 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class DemoServiceImpl implements DemoService {
 
-    public List<DemoItem> getItems(String userID) {
-        return null;
+    private static final Logger logger = LoggerFactory.getLogger(DemoServiceImpl.class);
+
+    private ConcurrentHashMap<String, List<DemoItem>> demoItems = new ConcurrentHashMap<>();
+
+
+    public List<DemoItem> getItems(String key) {
+        List<DemoItem> res = demoItems.getOrDefault(key, Collections.emptyList());
+        List<DemoItem> newRes = new ArrayList<>();
+        if (res != null) {
+            for (DemoItem demoItem : res) {
+                DemoItem newDemo = new DemoItem(demoItem.id, demoItem.num,demoItem.name);
+                newRes.add(newDemo);
+                System.out.println(newDemo);
+            }
+        }
+
+        return newRes;
     }
 
-    public boolean addItem(String userID, String itemID, int itemNum) {
+    public boolean addItem(String key, String itemID, int itemNum, String itemName) {
+
+        List<DemoItem> itemList = demoItems.computeIfAbsent(key, k -> new ArrayList<>());
+        for (DemoItem item : itemList) {
+            if (item.id.equals(itemID)) {
+                item.num = item.num + itemNum;
+                return true;
+            }
+        }
+        itemList.add(new DemoItem(itemID, itemNum, itemName));
         return false;
     }
 }
