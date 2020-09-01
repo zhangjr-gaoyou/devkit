@@ -1,0 +1,34 @@
+mybatisplus:
+  # global config
+  author: zhang.devkit
+  open: false
+  projectPath: /Users/zhangjr/data/devspaces/kit/MybatisPlusDemo
+
+
+  # package
+  moduleName: demo1
+  parent: com.zhang.devkit
+
+
+  # template
+  templatePath: /templates/mapper.xml.ftl
+
+
+  xml:
+
+
+  # stragey
+  # 表名，多个英文逗号分割
+
+  tables: user
+
+  # jdbc config
+
+  jdbc:
+    url: jdbc:mysql://localhost:3306/mybatisplusdemo?useUnicode=true&useSSL=false&characterEncoding=utf8
+    driverName: com.mysql.jdbc.Driver
+    schemaName:
+    userName: root
+    password: root123
+
+
