@@ -6,16 +6,16 @@ mybatisplus:
 
 
   # package
-  moduleName: demo1
+  moduleName: demo
   parent: com.zhang.devkit
 
 
   # template
   templatePath: /templates/mapper.xml.ftl
-
-
+  service: /templates/service.java
+  serviceImpl: /templates/serviceImpl.java
+  controller: /templates/controller.java
   xml:
-
 
   # stragey
   # 表名，多个英文逗号分割

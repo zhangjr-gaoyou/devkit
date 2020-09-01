@@ -153,7 +153,33 @@ public class MybatisPlusGeneratorConfig {
     private String jdbcPassword;
 
 
+    public String getService() {
+        return service;
+    }
 
+    public void setService(String service) {
+        this.service = service;
+    }
+
+    public String getServiceImpl() {
+        return serviceImpl;
+    }
+
+    public void setServiceImpl(String serviceImpl) {
+        this.serviceImpl = serviceImpl;
+    }
+
+    public String getController() {
+        return controller;
+    }
+
+    public void setController(String controller) {
+        this.controller = controller;
+    }
+
+    private String service;
+    private String serviceImpl;
+    private String controller;
 
 
 }
