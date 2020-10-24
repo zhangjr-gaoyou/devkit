@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.zhang.devkit",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.10.1",
+    "applicationType": "microservice",
+    "baseName": "mssdemo",
+    "packageName": "com.zhang.devkit",
+    "packageFolder": "com/zhang/devkit",
+    "serverPort": "18081",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MzBmYjRjZWYzNDVhYTA2NTU5NDU3MWUzYWU5NDQwNWQzZWI5MDgzNmIzMzZlZDAxNjFkZjExNzhiZWQ1ZmU5NDY4NTE1ODM1ODI5MWUyNDQ5NzEyNmQxMzM1MmVkN2IzOGYyMGM2ZDVjYTdiMjliMDUzNDBmZDY2YzViNDc1OGQ=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1603504354726,
+    "testFrameworks": ["gatling"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "en",
+    "languages": ["en", "zh-cn"],
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
