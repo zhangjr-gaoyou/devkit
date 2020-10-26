@@ -1,7 +1,9 @@
-package com.zhang.devkit;
+package com.zhang.devkit.impl;
 
 import java.util.List;
 
+import com.zhang.devkit.DemoItem;
+import com.zhang.devkit.DemoService;
 import org.apache.dubbo.config.annotation.Service;
 
 import org.slf4j.Logger;
@@ -19,7 +21,6 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @RefreshScope
 @Service(version = "1.0.0")
-
 public class DemoServiceImpl implements DemoService {
 
     private static final Logger logger = LoggerFactory.getLogger(DemoServiceImpl.class);
@@ -28,14 +29,26 @@ public class DemoServiceImpl implements DemoService {
 
 
     public List<DemoItem> getItems(String key) {
-        List<DemoItem> res = demoItems.getOrDefault(key, Collections.emptyList());
+
         List<DemoItem> newRes = new ArrayList<>();
+        /*
+        List<DemoItem> res = demoItems.getOrDefault(key, Collections.emptyList());
+
         if (res != null) {
             for (DemoItem demoItem : res) {
                 DemoItem newDemo = new DemoItem(demoItem.id, demoItem.num,demoItem.name);
                 newRes.add(newDemo);
                 System.out.println(newDemo);
             }
+        }
+        */
+        // demp
+
+        for (int i=1; i<10; i++) {
+            DemoItem newDemo;
+            newDemo = new DemoItem("key"+i, i+100,"demo"+i);
+            newRes.add(newDemo);
+            System.out.println(newDemo);
         }
 
         return newRes;

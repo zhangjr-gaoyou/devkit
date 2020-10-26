@@ -20,6 +20,13 @@ import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.Collection;
 
+
+import com.alibaba.nacos.api.annotation.NacosInjected;
+import com.alibaba.nacos.api.exception.NacosException;
+import com.alibaba.nacos.api.naming.NamingService;
+import com.alibaba.nacos.api.naming.pojo.Instance;
+
+
 @SpringBootApplication
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
 public class MssdemoApp {
@@ -61,8 +68,15 @@ public class MssdemoApp {
         SpringApplication app = new SpringApplication(MssdemoApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
+
         logApplicationStartup(env);
+
+
     }
+
+    @NacosInjected
+    private static NamingService namingService;
+
 
     private static void logApplicationStartup(Environment env) {
         String protocol = "http";
@@ -94,5 +108,18 @@ public class MssdemoApp {
             serverPort,
             contextPath,
             env.getActiveProfiles());
+
+
+        try{
+                namingService.registerInstance(env.getProperty("spring.application.name"),
+                    hostAddress,
+                    Integer.valueOf(env.getProperty("server.port")));
+            }catch(NacosException e){
+
+
+            }
     }
+
+
+
 }

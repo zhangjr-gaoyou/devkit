@@ -1,4 +1,4 @@
-package com.zhang.devkit;
+package com.zhang.devkit.impl;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;

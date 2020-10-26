@@ -1,0 +1,13 @@
+
+server:
+  port: 28081
+nacos:
+  discovery:
+    server-addr: localhost:8848
+    username: demo
+    password: demo123
+    namespace: 2354e82c-b487-4890-9dee-fedec4e8f319
+
+spring:
+  application:
+    name: SpringBootDemoProvider
